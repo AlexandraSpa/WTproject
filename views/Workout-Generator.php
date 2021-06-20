@@ -1,13 +1,19 @@
+<?php
+/**
+ * @var $this \core\View
+ */
+
+$this->title='Workout Generator | Fitter'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Workout generator</title>
-    <link rel="shortcut icon" href="../logo_dark_mode.ico" type="image/x-icon" />
     <style type="text/css">
+        <?php include '../public/css/header.css'?>
         <?php include '../public/css/Workout-Generator.css'?>
         <?php include '../public/css/header-profile.css'?>
     </style>
 </head>
+<body class="body" >
 <main class="main">
     <section class="form-generator">
         <span class="form-question"><br>In order to see recommended workouts, please let us know:</span>
@@ -82,21 +88,17 @@
 <section id="loader" class="loader" onload="loading() "></section>
 
 <script>
-    function chooseTheme(){
-        document.cookie="idk=sdfds";
-        if(document.cookie==="theme=black")
-            switchTheme();
-        else
-            document.cookie="theme=light";
-    }
     function switchTheme() {
 
         const body = document.body;
         const main=body.querySelector('.main');
         const form=body.querySelector('.main .form-generator');
+        const question=body.querySelector('.form-question');
         const btn3=body.querySelector('.main .dark-mode-btn');
         main.classList.toggle("dark-mode");
         form.classList.toggle("dark-mode-form-container");
+        question.classList.toggle("dark-mode-text");
+        btn3.classList.toggle("dark-mode-button");
         document.cookie="theme=black";
 
         if(btn3.innerHTML==="Switch to<br> dark mode"){
@@ -133,7 +135,7 @@
     function showWorkout() {
         let loader=document.querySelector(".loader");
         loader.parentNode.removeChild(loader);
-        window.location='../../Frontend/AvailWorkouts/Available-Workouts.html';
+        window.location='/available-workouts';
     }
 
 

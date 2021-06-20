@@ -91,6 +91,7 @@ body{
 
 .main .form-generator{
     background-color: rgba(238, 238, 238, 0.8);
+    color: #413f3f;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -109,6 +110,7 @@ body{
     font-size: 2.5vh;
     justify-content:center;
     position: relative;
+    color: #413f3f;
 
 }
 .main fieldset{
@@ -294,16 +296,20 @@ body{
     background-color: rgba(36,37,38,0.8);
     border-radius: 18px;
 }
-.dark-mode-button{
+.form-question.dark-mode-text{
+    color:white;
+}
+.dark-mode-btn.dark-mode-button{
     background-color: rgba(36, 36, 36,1);
 }
-.dark-mode-button:hover{
+.dark-mode-btn.dark-mode-button:hover{
     background-color: rgba(238,28,80,1);
 
 }
 section.form-generator.dark-mode-form-container, section.submit-button.dark-mode-form-container{
     background-color: rgba(36,37,38,0.8);
-    border-radius: 18px;;
+    color:white;
+    border-radius: 18px;
 }
 
 

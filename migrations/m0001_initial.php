@@ -21,7 +21,8 @@ class m0001_initial{
                 height INT,
                 achievements VARCHAR(255),
                 workouts_completed INT,
-                workout_streak INT  
+                workout_streak INT, 
+                status INT
 )ENGINE=INNODB";
         $db->pdo->exec($SQL);
     }

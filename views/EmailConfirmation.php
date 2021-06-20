@@ -1,16 +1,21 @@
+<?php
+/**
+ * @var $this \core\View
+ */
+
+$this->title='Email Confirmation | Fitter'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Email Confirmation| Fitter</title>
-    <link rel="stylesheet" href="../public/css/EmailConfirmation.css">
-    <link rel="shortcut icon" href="https://raw.githubusercontent.com/AlexandraSpa/WTproject/main/logo_dark_mode.ico" type="image/x-icon" />
+    <style type="text/css">
+        <?php include '../public/css/EmailConfirmation.css'?>
+        <?php include '../public/css/header-profile.css'?>
+        <?php include '../public/css/header.css'?>
+    </style>
 </head>
 <body>
     <main>
-        <a href="../Homepage/homepage.html">
+        <a href="/">
             <img class="Xicon" src="../images/x-mark.png" alt="X icon">
         </a>
         <img class="emailicon" src="../images/email.png" alt="email icon">

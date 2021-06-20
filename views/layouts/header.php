@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../../public/images/logo_dark_mode.ico" type="image/x-icon"/>
-    <title>Fitter</title>
+    <link rel="shortcut icon" href="/images/logo_dark_mode.ico" type="image/x-icon"/>
+    <title><?php echo $this->title ?></title>
 </head>
 
 <body>
@@ -25,10 +25,10 @@ if(Application::isGuest()):?>
                 <a href="../leaderboard.html">Leaderboard</a>
             </li>
             <li role="menuitem">
-                <a href="../News.html">News</a>
+                <a href="/news">News</a>
             </li>
             <li role="menuitem">
-                <a href="../about_us.html">About Us</a>
+                <a href="/about-us">About Us</a>
             </li>
             <li role="menuitem">
                 <a href="../support.html">Contact</a>
@@ -38,10 +38,6 @@ if(Application::isGuest()):?>
 </header>
     {{content}}
 <?php else: ?>
-<script>
-    <?php require_once("showMenu.js");?>
-</script>
-<body class="body" onload="chooseTheme()">
 <header class="header">
     <section class="top-menu">
         <a href="/homepage" class="site-logo">
@@ -57,10 +53,10 @@ if(Application::isGuest()):?>
                 <a href="../../Frontend/Leaderboard/leaderboard.html">Leaderboard</a>
             </li>
             <li role="menuitem">
-                <a href="../../Frontend/News/News.html">News</a>
+                <a href="/news">News</a>
             </li>
             <li role="menuitem">
-                <a href="../../Frontend/Homepage/homepage.html">About Us</a>
+                <a href="/about-us">About Us</a>
             </li>
             <li role="menuitem">
                 <a href="../../Frontend/Support/support.html">Contact</a>
@@ -76,16 +72,16 @@ if(Application::isGuest()):?>
                     <a href="/profile">Signed in as <?php echo Application::$app->user->getEmail()?></a>
                 </li>
                 <li role="menuitem">
-                    <a href="../../Frontend/Dashboard/Dashboard.html">Statistics</a>
+                    <a href="/statistics">Statistics</a>
                 </li>
                 <li role="menuitem">
-                    <a href="Workout-Generator.php">Workout generator</a>
+                    <a href="/Workout-Generator">Workout generator</a>
                 </li>
                 <li role="menuitem">
-                    <a href="../../Frontend/AvailWorkouts/Available-Workouts.html">Available Workouts</a>
+                    <a href="/available-workouts">Available Workouts</a>
                 </li>
                 <li role="menuitem">
-                    <a href="../../Frontend/Achievements/Achievements.html">Achievements</a>
+                    <a href="/achievements">Achievements</a>
                 </li>
                 <li role="menuitem">
                     <a href="/logout">Log out</a>
@@ -93,6 +89,9 @@ if(Application::isGuest()):?>
             </ul>
         </nav>
     </section>
+    <script>
+        <?php require_once("showMenu.js");?>
+    </script>
 <?php endif?>
 <?php if (Application::$app->session->getFlash('success')): ?>
 <div class="alert alert-success">

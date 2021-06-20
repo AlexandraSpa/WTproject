@@ -1,18 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+/**
+ * @var $this \core\View
+ */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Fitter</title>
-    <style type="text/css">
-        <?php include '../public/css/homepage.css'; ?>
-        <?php include '../public/css/header.css'; ?>
-        <?php include '../public/css/header-profile.css'; ?>
-    </style>
-</head>
-
-<body>
+$this->title='Home | Fitter'?>
+<style type="text/css">
+    <?php include '../public/css/homepage.css'; ?>
+    <?php include '../public/css/header.css'; ?>
+    <?php include '../public/css/header-profile.css'; ?>
+</style>
 <main>
     <section class="hero_container">
         <div class="crop_container">
@@ -23,9 +19,15 @@
                 Generate Workouts Based On <span class="your">Your</span> Needs
             </span>
                 <div>
+                    <?php if (\core\Application::isGuest()):?>
                     <a href="/register" class="get_started">
                             Get Started
                     </a>
+                    <?php else: ?>
+                    <a href="/Workout-Generator" class="get_started">
+                        Get Started
+                    </a>
+                    <?php endif?>
                 </div>
             </div>
         </div>

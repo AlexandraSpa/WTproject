@@ -6,7 +6,7 @@ html, body {
 
 
 }
-li, a, button,h1,p,div, form {
+li, a, button,h1,p,div {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1em;
@@ -17,29 +17,18 @@ body{
     background-color: #1f2024;
 }
 main{
-    display: flex;
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
+    font-size: 2vh;
 }
-main .profile-image-container{
-    display: flex;
-    flex-direction: column;
-}
-main .profile-image{
-    width: 10rem;
-    height: 10rem;
-}
-main form{
-    display:flex;
-    flex-direction: column;
-}
-main form button{
+h3{
     color: #F26F6D;
-    cursor: pointer;
-}main form button:hover{
-     color: #D3D3D3;
-     background-color: #F26F6D;
+}
+main .Seticon{
+    width: 1rem;
+    height: 1rem;
 }
 .footer_container{
     padding: 4rem 0 0;

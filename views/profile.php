@@ -1,10 +1,12 @@
+<?php
+/**
+ * @var $this \core\View
+ */
+
+$this->title='Profile | Fitter'?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profile | Fitter</title>
     <style type="text/css">
         <?php include '../public/css/profile.css'; ?>
         <?php include '../public/css/header-profile.css'; ?>
@@ -13,7 +15,6 @@
 </head>
 <body>
 <main>
-
     <div class="profile-image-container">
         <label for="file">
             <img class="profile-image" src="../images/add-user.png" alt="Photo">
@@ -83,40 +84,5 @@
     </div>
 
 </footer>
-<section class="profile-menu" id="profile-menu">
-    <nav class="menu">
-        <ul role="menu" class="menu">
-            <li role="menuitem">
-                <a href="../Profile/Profile.html">Signed in as Kate</a>
-            </li>
-            <li role="menuitem">
-                <a href="../Dashboard/Dashboard.html">Statistics</a>
-            </li>
-            <li role="menuitem">
-                <a href="../WorkoutGen/Workout-Generator.html">Workout generator</a>
-            </li>
-            <li role="menuitem">
-                <a href="../AvailWorkouts/Available-Workouts.html">Available Workouts</a>
-            </li>
-            <li role="menuitem">
-                <a href="../Achievements/Achievements.html">Achievements</a>
-            </li>
-            <li role="menuitem">
-                <a href="../Homepage/homepage.html">Log out</a>
-            </li>
-        </ul>
-    </nav>
-</section>
-<script>
-    function showMenu(){
-        let menuStyle=document.getElementById("profile-menu").style.display;
-        if(menuStyle==="flex")
-            document.getElementById("profile-menu").style.display="none";
-        else
-            document.getElementById("profile-menu").style.display="flex";
-
-    }
-
-</script>
 </body>
 </html>

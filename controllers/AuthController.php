@@ -14,14 +14,14 @@ class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->registerMiddleware(new AuthMiddleware(['profile']));
+        $this->registerMiddleware(new AuthMiddleware(['profile','workouts']));
     }
     public function login(Request $request, Response $response){
         $loginForm = new LoginForm();
         if($request->isPost()){
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()){
-                $response->redirect('/Workout-Generator');
+                $response->redirect('/');
                 return 'ok';
             }
         }
@@ -56,5 +56,8 @@ class AuthController extends Controller
     }
     public function profile(){
         return $this->render('profile');
+    }
+    public function workouts(){
+        return $this->render('Available-Workouts');
     }
 }

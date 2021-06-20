@@ -2,6 +2,11 @@
 
 /** @var $model User */
 
+/**
+ * @var $this \core\View
+ */
+
+$this->title = 'Login | Fitter';
 use models\User;
 
 ?>

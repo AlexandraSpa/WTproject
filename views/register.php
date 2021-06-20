@@ -2,6 +2,12 @@
 
 /** @var $model User */
 
+/**
+ * @var $this \core\View
+ */
+
+$this->title = 'Register | Fitter';
+
 use core\form\Form;
 use models\User;
 

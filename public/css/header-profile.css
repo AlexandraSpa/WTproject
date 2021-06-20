@@ -1,6 +1,7 @@
 header{
     position: relative;
     padding: 1vh 5vh;
+    background-color: #24252A;
 }
 
 .top-menu{
@@ -43,7 +44,7 @@ header{
     opacity: 0.9;
     position: absolute;
     top:10vh;
-    right: 3em;
+    right: 2em;
     font-size: 2vh;
 
 
@@ -57,6 +58,7 @@ header{
     border-width: 7px;
     border-style: solid;
     border-color: transparent transparent white transparent;
+
 }
 .profile-menu .profile{
     display: flex;
@@ -67,6 +69,7 @@ header{
     margin-bottom: 5px;
     margin-right: 10px;
     list-style-type: none;
+    max-width: 30vh;
 
 }
 ul.profile-picture-menu {
@@ -94,5 +97,8 @@ ul.profile-picture-menu {
 @media screen and (max-width: 550px){
     .header{
         font-size: 3.5vw;
+    }
+    .top-menu img{
+        width:20vw;
     }
 }

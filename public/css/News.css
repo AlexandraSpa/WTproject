@@ -6,40 +6,53 @@ html, body {
 
 
 }
-li, a, button,h1,p,div, form {
+li, a, button,h1,p {
     font-family: 'Montserrat', sans-serif;
     font-weight: 700;
     font-size: 1em;
     color: #D3D3D3;
     text-decoration: none;
 }
-body{
-    background-color: #1f2024;
-}
 main{
-    display: flex;
+    background-color: #484a53;
+    display: flex; 
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: row;
+    font-size: 2vh;
+    
+
+    
 }
-main .profile-image-container{
-    display: flex;
-    flex-direction: column;
-}
-main .profile-image{
-    width: 10rem;
-    height: 10rem;
-}
-main form{
+.article{
+    background-color: #24252A;
+    border-radius: 16px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    margin-left: 1rem;
+    width: 30vw;
+    height: 40vh;
     display:flex;
+    justify-content: space-between;
     flex-direction: column;
+    text-align: center;
 }
-main form button{
+.article:hover p{
     color: #F26F6D;
-    cursor: pointer;
-}main form button:hover{
-     color: #D3D3D3;
-     background-color: #F26F6D;
+    align-self: flex-end;
+}
+.article:hover .article__image{
+    opacity: 0.5;
+}
+.article .article__image{
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    width:30vw;
+    height: 25vh;
+    object-fit: cover;
+}
+.article h1{
+    color:ivory;
 }
 .footer_container{
     padding: 4rem 0 0;

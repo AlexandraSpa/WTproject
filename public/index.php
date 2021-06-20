@@ -4,12 +4,18 @@ require_once __DIR__ . '/../vendor/autoload.php';
 
 $app = new core\Application(dirname(__DIR__));
 $app->router->get('/', 'homepage');
-$app->router->get('/logout', [controllers\AuthController::class,'logout']);
 $app->router->get('/homepage', 'homepage');
-$app->router->get('/Workout-Generator', 'Workout-Generator');
-
-
+$app->router->get('/about-us', 'about_us');
 $app->router->get('/EmailConfirmation', 'EmailConfirmation');
+$app->router->get('/statistics', 'statistics');
+$app->router->get('/news', 'News');
+$app->router->get('/workout', 'WorkoutPage');
+$app->router->get('/Workout-Generator', 'Workout-Generator');
+$app->router->get('/achievements', 'Achievements');
+
+$app->router->get('/logout', [controllers\AuthController::class,'logout']);
+$app->router->get('/available-workouts', [controllers\AuthController::class,'workouts']);
+
 
 $app->router->get('/login', [controllers\AuthController::class,'login']);
 $app->router->post('/login', [controllers\AuthController::class,'login']);
