@@ -4,11 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Fitter</title>
     <style type="text/css">
         <?php include '../public/css/homepage.css'; ?>
         <?php include '../public/css/header.css'; ?>
+        <?php include '../public/css/header-profile.css'; ?>
     </style>
-    <title>Home | Fitter</title>
 </head>
 
 <body>

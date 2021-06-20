@@ -10,8 +10,8 @@ $config = [
 
 $app = new core\Application(dirname(__DIR__), $config);
 $app->router->get('/', 'homepage');
-
-
+$app->router->get('/logout', 'homepage');
+$app->router->get('/homepage', 'homepage');
 $app->router->get('/Workout-Generator', 'Workout-Generator');
 
 

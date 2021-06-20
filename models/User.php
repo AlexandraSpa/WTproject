@@ -3,8 +3,9 @@
 namespace models;
 
 use core\DBModel;
+use core\UserModel;
 
-class User extends DBModel
+class User extends UserModel
 {
     const STATUS_INACTIVE = 0;
     const STATUS_ACTIVE = 1;
@@ -44,5 +45,10 @@ class User extends DBModel
     public function getAttributes(): array
     {
         return ['email', 'password', 'status'];
+    }
+
+    public function getEmail(): string
+    {
+        return $this->email;
     }
 }

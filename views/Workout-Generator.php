@@ -1,41 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
     <title>Workout generator</title>
+    <link rel="shortcut icon" href="../logo_dark_mode.ico" type="image/x-icon" />
     <style type="text/css">
         <?php include '../public/css/Workout-Generator.css'?>
+        <?php include '../public/css/header-profile.css'?>
     </style>
-    <link rel="shortcut icon" href="../logo_dark_mode.ico" type="image/x-icon" />
 </head>
-<body class="body" onload="javascript:chooseTheme()">
-<header class="header">
-    <section class="top-menu">
-        <a href="../../Frontend/Homepage/homepage.html" class="site-logo">
-            <img src="../images/logo_dark_mode.png" alt="logo" >
-        </a>
-        <section class="profile-picture-container">
-            <button class="profile-picture" onclick="showMenu()"></button>
-        </section>
-    </section>
-        <nav class="menu">
-            <ul role="menu">
-                <li role="menuitem">
-                    <a href="../../Frontend/Leaderboard/leaderboard.html">Leaderboard</a>
-                </li>
-                <li role="menuitem">
-                    <a href="../../Frontend/News/News.html">News</a>
-                </li>
-                <li role="menuitem">
-                    <a href="../../Frontend/Homepage/homepage.html">About Us</a>
-                </li>
-                <li role="menuitem">
-                    <a href="../../Frontend/Support/support.html">Contact</a>
-                </li>
-            </ul>
-        </nav>
-</header>
-
 <main class="main">
     <section class="form-generator">
         <span class="form-question"><br>In order to see recommended workouts, please let us know:</span>
@@ -108,30 +80,7 @@
     </div>
 </footer>
 <section id="loader" class="loader" onload="loading() "></section>
-<section class="profile-menu" id="profile-menu">
-    <nav class="menu">
-        <ul role="menu" class="menu">
-            <li role="menuitem">
-                <a href="../../Frontend/Profile/Profile.html">Signed in as Kate</a>
-            </li>
-            <li role="menuitem">
-                <a href="../../Frontend/Dashboard/Dashboard.html">Statistics</a>
-            </li>
-            <li role="menuitem">
-                <a href="Workout-Generator.php">Workout generator</a>
-            </li>
-            <li role="menuitem">
-                <a href="../../Frontend/AvailWorkouts/Available-Workouts.html">Available Workouts</a>
-            </li>
-            <li role="menuitem">
-                <a href="../../Frontend/Achievements/Achievements.html">Achievements</a>
-            </li>
-            <li role="menuitem">
-                <a href="../../Frontend/Homepage/homepage.html">Log out</a>
-            </li>
-        </ul>
-    </nav>
-</section>
+
 <script>
     function chooseTheme(){
         document.cookie="idk=sdfds";
@@ -186,14 +135,7 @@
         loader.parentNode.removeChild(loader);
         window.location='../../Frontend/AvailWorkouts/Available-Workouts.html';
     }
-    function showMenu(){
-        let menuStyle=document.getElementById("profile-menu").style.display;
-        if(menuStyle==="flex")
-            document.getElementById("profile-menu").style.display="none";
-        else
-            document.getElementById("profile-menu").style.display="flex";
 
-    }
 
 </script>
 
