@@ -2,6 +2,7 @@
 
 /** @var $model User */
 
+use core\form\Form;
 use models\User;
 
 ?>
@@ -15,12 +16,13 @@ use models\User;
     <style type="text/css">
         <?php include '../public/css/register.css'; ?>
         <?php include '../public/css/header.css'; ?>
+        <?php include '../public/css/header-profile.css'; ?>
     </style>
     <title>Register | Fitter</title>
 </head>
 <body>
     <main>
-        <?php  $form = \core\form\Form::begin("register_form","post")?>
+        <?php  $form = Form::begin("register_form","post")?>
         <h1 class="register_title"> Create Your Fitter Account</h1>
         <div class="old_user">
             <span>Already have an account?</span>
@@ -41,7 +43,7 @@ use models\User;
                 You also acknowledge that Fitter uses cookies to give the best user experience.
             </section>
         </div>
-        <?php \core\form\Form::end()?>
+        <?php Form::end()?>
     </main>
 </div>
 </body>

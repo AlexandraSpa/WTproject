@@ -52,9 +52,6 @@ class Database
         else{
             $this->log("All migrations are applied");
         }
-
-
-
     }
     public function createMigrationTable()
     {
@@ -65,7 +62,7 @@ class Database
             ) ENGINE=INNODB;");
 
     }
-    public function getAppliedMigrations()
+    public function getAppliedMigrations(): array
     {
         $statement=$this->pdo->prepare("SELECT migration FROM migrations");
         $statement->execute();

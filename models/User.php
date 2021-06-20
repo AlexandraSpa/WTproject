@@ -2,7 +2,6 @@
 
 namespace models;
 
-use core\DBModel;
 use core\UserModel;
 
 class User extends UserModel

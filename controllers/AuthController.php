@@ -4,6 +4,7 @@
 namespace controllers;
 use core\Application;
 use core\Controller;
+use core\Middlewares\AuthMiddleware;
 use core\Request;
 use core\Response;
 use models\LoginForm;
@@ -11,13 +12,17 @@ use models\User;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        $this->registerMiddleware(new AuthMiddleware(['profile']));
+    }
     public function login(Request $request, Response $response){
         $loginForm = new LoginForm();
         if($request->isPost()){
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()){
                 $response->redirect('/Workout-Generator');
-                return;
+                return 'ok';
             }
         }
         $this->setLayout('header');
@@ -45,11 +50,11 @@ class AuthController extends Controller
             'model' => $user
         ]);
     }
-    public function logout(Request $request,Response  $response){
+    public function logout(Request $request,Response $response){
         Application::$app->logout();
         $response->redirect('/');
     }
     public function profile(){
-        return $this->render('profile',[]);
+        return $this->render('profile');
     }
 }

@@ -11,7 +11,7 @@ use models\User;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="../public/images/logo_dark_mode.ico" type="image/x-icon"/>
+    <link rel="shortcut icon" href="/images/logo_dark_mode.ico" type="image/x-icon"/>
     <title>Sign in | Fitter</title>
     <meta name="google-signin-scope" content="profile email">
     <meta name="google-signin-client_id"
@@ -20,6 +20,7 @@ use models\User;
     <style type="text/css">
         <?php include '../public/css/login.css'; ?>
         <?php include '../public/css/header.css'; ?>
+        <?php include '../public/css/header-profile.css'; ?>
     </style>
 </head>
 
