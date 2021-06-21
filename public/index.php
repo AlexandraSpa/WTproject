@@ -10,7 +10,6 @@ $app->router->get('/EmailConfirmation', 'EmailConfirmation');
 $app->router->get('/statistics', 'statistics');
 $app->router->get('/news', 'News');
 $app->router->get('/workout', 'WorkoutPage');
-$app->router->get('/Workout-Generator', 'Workout-Generator');
 $app->router->get('/achievements', 'Achievements');
 
 $app->router->get('/logout', [controllers\AuthController::class,'logout']);
@@ -22,5 +21,7 @@ $app->router->post('/login', [controllers\AuthController::class,'login']);
 $app->router->get('/register', [controllers\AuthController::class,'register']);
 $app->router->post('/register', [controllers\AuthController::class,'register']);
 $app->router->get('/profile', [controllers\AuthController::class,'profile']);
+$app->router->get('/workout-generator', [controllers\SiteController::class,'generateWorkout']);
+$app->router->post('/workout-generator', [controllers\SiteController::class,'generateWorkout']);
 
 $app->run();

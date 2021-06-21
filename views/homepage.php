@@ -24,7 +24,7 @@ $this->title='Home | Fitter'?>
                             Get Started
                     </a>
                     <?php else: ?>
-                    <a href="/Workout-Generator" class="get_started">
+                    <a href="/workout-generator" class="get_started">
                         Get Started
                     </a>
                     <?php endif?>

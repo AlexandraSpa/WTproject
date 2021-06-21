@@ -75,7 +75,7 @@ if(Application::isGuest()):?>
                     <a href="/statistics">Statistics</a>
                 </li>
                 <li role="menuitem">
-                    <a href="/Workout-Generator">Workout generator</a>
+                    <a href="/workout-generator">Workout Generator</a>
                 </li>
                 <li role="menuitem">
                     <a href="/available-workouts">Available Workouts</a>

@@ -1,4 +1,7 @@
 <?php
+use models\WorkoutForm;
+/** @var $model WorkoutForm */
+
 /**
  * @var $this \core\View
  */
@@ -17,42 +20,23 @@ $this->title='Workout Generator | Fitter'?>
 <main class="main">
     <section class="form-generator">
         <span class="form-question"><br>In order to see recommended workouts, please let us know:</span>
-        <form method="post" class="form-background">
-            <fieldset class="activity">
-                <legend><br>What is your activity level?</legend>
-                <label class="radio-container">Sedentary<input type="radio" name="activity" value="sedentary"><span class="radio-checkmark"></span> </label>
-                <label class="radio-container">Somewhat active<input type="radio" name="activity" value="somewhat active"><span class="radio-checkmark"></span>  </label>
-                <label class="radio-container">Active<input type="radio" name="activity" value="active"><span class="radio-checkmark"></span>  </label>
-                <label class="radio-container">Very active<input type="radio" name="activity" value="very active"><span class="radio-checkmark"></span>  </label>
-            </fieldset>
-            <fieldset class="type">
-                <legend><br>What type of workouts do you prefer? </legend>
-                <label class="checkbox-container">Arm Workout<input type="checkbox" name="type" value="arm"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Leg Workout<input type="checkbox" name="type" value="leg"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Abdominal Workout<input type="checkbox" name="type" value="abs"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Chest Workout<input type="checkbox" name="type" value="chest"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Cardio Workout<input type="checkbox" name="type" value="cardio"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Back Workout<input type="checkbox" name="type" value="back"><span class="checkbox-checkmark"></span></label>
-                <label class="checkbox-container">Shoulders Workout<input type="checkbox" name="type" value="shoulders"><span class="checkbox-checkmark"></span></label>
-            </fieldset>
-            <fieldset class="duration">
-                <legend><br>How long do you want your workouts to be? </legend>
-                <label class="radio-container">Approximately 10 minutes<input type="radio" name="duration" value="10"><span class="radio-checkmark"></span> </label>
-                <label class="radio-container">Approximately 20 minutes<input type="radio" name="duration" value="20"><span class="radio-checkmark"></span>  </label>
-                <label class="radio-container">Approximately 30 minutes<input type="radio" name="duration" value="30"><span class="radio-checkmark"></span>  </label>
-                <label class="radio-container">Approximately 60 minutes<input type="radio" name="duration" value="60"><span class="radio-checkmark"></span>  </label>
-            </fieldset>
-            <fieldset class="goal">
-                <legend><br>What is your workout goal? </legend>
-                <label class="radio-container">Loose weight<input type="radio" name="goal" value="loose-weight"><span class="radio-checkmark"></span> </label>
-                <label class="radio-container">Get toned<input type="radio" name="goal" value="get-toned"><span class="radio-checkmark"></span>  </label>
-                <label class="radio-container">Gain muscle<input type="radio" name="goal" value="gain-muscle"><span class="radio-checkmark"></span>  </label>
-            </fieldset>
+        <?php  $form = \core\form\Form::begin("form-background","post")?>
+        <?php echo $form->fieldset($model,"activity","What is your activity level? ","radio",
+        ["sedentary","somewhat active","active","very active"])?>
+
+        <?php echo $form->fieldset($model,"type","What type of workouts do you prefer? ","checkbox",
+            ["arm Workout","leg Workout","abdominal Workout","chest Workout","cardio Workout","back Workout","shoulders Workout"])?>
+
+        <?php echo $form->fieldset($model,"duration","How long do you want your workouts to be? ","radio",
+            ["Approximately 10 minutes","Approximately 20 minutes","Approximately 30 minutes","Approximately 60 minutes"])?>
+
+        <?php echo $form->fieldset($model,"goal","What is your workout goal? ","radio",
+            ["Loose weight","Get toned","Gain muscle"])?>
 
             <section class="submit-button">
-                <button type="submit" class="button" onclick="removeElements();loading()">Generate personalised workout</button>
+                <button type="submit" class="button" ">Generate personalised workout</button>
             </section>
-        </form>
+        <?php \core\form\Form::end()?>
     </section>
     <button type="button" class="dark-mode-btn" id="dark-mode-btn" onclick="switchTheme()">Switch to<br> dark mode</button>
 </main>

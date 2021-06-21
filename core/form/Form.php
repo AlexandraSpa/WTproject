@@ -23,4 +23,8 @@ class Form
     {
         return new Field($model, $attribute);
     }
+    public function fieldset(Model $model,string $class,string $question,string $type,$attributes=[]):Fieldset
+    {
+        return new Fieldset($model,$class,$question,$type,$attributes);
+    }
 }

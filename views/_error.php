@@ -11,6 +11,7 @@ else
 ?>
 <style type="text/css">
     <?php include '../public/css/header.css'?>
+    <?php include '../public/css/header-profile.css'?>
 </style>
 <body>
     <br><br><h1><?php echo $exception->getCode() ?> - <?php echo $exception->getMessage()?></h1>
