@@ -16,9 +16,15 @@ class ComposerStaticInitc3a095a052715d43409850d0e68d037b
         'controllers\\SiteController' => __DIR__ . '/../..' . '/controllers/SiteController.php',
         'core\\Application' => __DIR__ . '/../..' . '/core/Application.php',
         'core\\Controller' => __DIR__ . '/../..' . '/core/Controller.php',
+        'core\\DBModel' => __DIR__ . '/../..' . '/core/DBModel.php',
+        'core\\Database' => __DIR__ . '/../..' . '/core/Database.php',
         'core\\Request' => __DIR__ . '/../..' . '/core/Request.php',
         'core\\Response' => __DIR__ . '/../..' . '/core/Response.php',
         'core\\Router' => __DIR__ . '/../..' . '/core/Router.php',
+        'core\\WorkoutModel' => __DIR__ . '/../..' . '/core/WorkoutModel.php',
+        'migrations\\m0001_initial' => __DIR__ . '/../..' . '/migrations/m0001_initial.php',
+        'migrations\\m0002_add_password' => __DIR__ . '/../..' . '/migrations/m0002_add_password.php',
+        'models\\Workout' => __DIR__ . '/../..' . '/models/Workout.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

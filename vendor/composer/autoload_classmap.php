@@ -11,7 +11,13 @@ return array(
     'controllers\\SiteController' => $baseDir . '/controllers/SiteController.php',
     'core\\Application' => $baseDir . '/core/Application.php',
     'core\\Controller' => $baseDir . '/core/Controller.php',
+    'core\\DBModel' => $baseDir . '/core/DBModel.php',
+    'core\\Database' => $baseDir . '/core/Database.php',
     'core\\Request' => $baseDir . '/core/Request.php',
     'core\\Response' => $baseDir . '/core/Response.php',
     'core\\Router' => $baseDir . '/core/Router.php',
+    'core\\WorkoutModel' => $baseDir . '/core/WorkoutModel.php',
+    'migrations\\m0001_initial' => $baseDir . '/migrations/m0001_initial.php',
+    'migrations\\m0002_add_password' => $baseDir . '/migrations/m0002_add_password.php',
+    'models\\Workout' => $baseDir . '/models/Workout.php',
 );

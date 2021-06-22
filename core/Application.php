@@ -3,11 +3,14 @@
 namespace core;
 
 use models\User;
+use models\UserWorkoutModel;
+use models\Workout;
 
 class Application
 {
     public string $layout = 'header';
     public User $userClass;
+    public UserWorkoutModel $userWorkoutClass;
     public static string $ROOT_DIR;
     public Router $router;
     public Request $request;
@@ -17,6 +20,8 @@ class Application
     public Session $session;
     public Controller $controller;
     public ?DBModel $user;
+    public ?Workout $workoutClass;
+    public array $workoutList=[];
     public View $view;
 
     /**
@@ -38,6 +43,8 @@ class Application
     public function __construct($rootPath)
     {
         $this->userClass = new User();
+        $this->workoutClass=new Workout();
+        $this->userWorkoutClass=new UserWorkoutModel();
 
         self::$ROOT_DIR = $rootPath;
         self::$app = $this;
@@ -56,6 +63,10 @@ class Application
             $this->user = $this->userClass->findOne([$primaryKey => $primaryValue]);
         } else {
             $this->user = null;
+        }
+        $workouts=$this->session->get('workouts');
+        if($workouts){
+            $this->workoutList=$workouts;
         }
     }
 
@@ -77,6 +88,15 @@ class Application
         $primaryKey = $user->getPrimaryKey();
         $primaryValue = $user->{$primaryKey};
         $this->session->set('user', $primaryValue);
+        $user_workout=$this->userWorkoutClass->findAll(['id_user'=>$primaryValue]);
+        $workoutList=[];
+        $index=0;
+        foreach($user_workout as $item){
+            array_push($workoutList,$this->workoutClass->findOne(['id'=>$item[0]]));
+            $index++;
+        }
+        $this->session->set('workouts',$workoutList);
+
         return true;
     }
 

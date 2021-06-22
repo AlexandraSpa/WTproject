@@ -22,6 +22,7 @@ class AuthController extends Controller
             $loginForm->loadData($request->getBody());
             if($loginForm->validate() && $loginForm->login()){
                 $response->redirect('/');
+                //Application::$app->session->setFlash('success', 'You just earned a new badge');
                 return 'ok';
             }
         }
@@ -38,8 +39,11 @@ class AuthController extends Controller
 
             if($user->validate() && $user->save())
             {
-                Application::$app->session->setFlash('success', 'Thanks for registering');
+                //Application::$app->session->setFlash('success', 'Thanks for registering');
                 Application::$app->response->redirect('/EmailConfirmation');
+                $msg = "Thank you for registering!";
+                echo "email".$user->getEmail();
+                mail($user->getEmail(),"My subject",$msg);
             }
             return Controller::render('register', [
                 'model' => $user

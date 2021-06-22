@@ -18,15 +18,6 @@ abstract class Model
         foreach ($data as $key => $value) {
             if (property_exists($this, $key)) {
                 $this->{$key} = $value;
-                echo $key."= [ ";
-                if(is_array($value))
-                    foreach ($value as $item){
-                        echo $item.", ";
-                    }
-
-                else
-                    echo $value;
-                echo "];";
             }
 
         }

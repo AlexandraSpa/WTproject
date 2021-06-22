@@ -10,6 +10,7 @@ $app->router->get('/EmailConfirmation', 'EmailConfirmation');
 $app->router->get('/statistics', 'statistics');
 $app->router->get('/news', 'News');
 $app->router->get('/workout', 'WorkoutPage');
+$app->router->get('/loader', 'loader');
 $app->router->get('/achievements', 'Achievements');
 
 $app->router->get('/logout', [controllers\AuthController::class,'logout']);

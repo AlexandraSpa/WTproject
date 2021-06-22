@@ -32,7 +32,7 @@ use models\User;
 <body>
 <div class="container">
     <main>
-        <?php  $form = \core\form\Form::begin("login_form","post")?>
+        <?php  $form = \core\form\Section::begin("login_form","post")?>
             <h1 class="login_title"> Log In to Your Fitter Account</h1>
             <div class="new_user">
                 <span>Don't have an account?</span>
@@ -66,7 +66,7 @@ use models\User;
                     You also acknowledge that Fitter uses cookies to give the best user experience.
                 </section>
             </div>
-        <?php \core\form\Form::end()?>
+        <?php \core\form\Section::end()?>
     </main>
 </div>
 </body>

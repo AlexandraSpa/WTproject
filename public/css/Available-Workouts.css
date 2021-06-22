@@ -26,12 +26,14 @@ body{
     justify-content: space-around;
     align-items: center;
     font-size: 2vh;
+    padding-top: 30px;
 }
 .main .image-name-duration{
     display:flex;
     flex-direction: column;
     margin: 10px auto;
     cursor: pointer;
+    width:min-content;
 
 }
 .main img{
@@ -39,6 +41,9 @@ body{
     height:25vh;
     width: auto;
 
+}
+.title{
+    height: 25%;
 }
 .main img:hover{
     opacity: 0.6;

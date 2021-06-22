@@ -10,80 +10,16 @@ $this->title='Available Workouts | Fitter'?>
     <style type="text/css">
         <?php include '../public/css/Available-Workouts.css'?>
         <?php include '../public/css/header-profile.css'?>
-    </style><link rel="shortcut icon" href="https://raw.githubusercontent.com/AlexandraSpa/WTproject/main/logo_dark_mode.ico" type="image/x-icon" />
-</head>
+    </style></head>
 <body class="body">
 <main class="main">
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/1.jfif" alt="1">
-            <p>Tabata Workout</p>
-            <p>12 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/2.jpg" alt="2">
-            <p>At-Home Bootcamp</p>
-            <p>20 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/3.jpg" alt="3">
-            <p>Full Body Workout</p>
-            <p>10 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/4.jpg" alt="4">
-            <p>Aerobic Exercise</p>
-            <p>15 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/5.jpg" alt="5">
-            <p>Anaerobic Exercise</p>
-            <p>20 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/6.jpg" alt="6">
-            <p>Circuit Workout</p>
-            <p>15 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/7.jpg" alt="7">
-            <p>Resistance Training</p>
-            <p>20 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/8.jpg" alt="8">
-            <p>Speed Strength</p>
-            <p>10 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/9.jpg" alt="9">
-            <p>Bodyweight Workout</p>
-            <p>20 min</p>
-        </a>
-    </section>
-    <section class="image-name-duration">
-        <a href="/workout">
-            <img src="../images/workouts/10.jpg" alt="10">
-            <p>Interval Training</p>
-            <p>15 min</p>
-        </a>
-    </section>
+    <?php
+    $workouts=\core\Application::$app->workoutList;
+    $section= new \core\form\Section();
+    foreach ($workouts as $workout){
+        echo $section->workoutField($workout->id,$workout->title,$workout->duration,$workout->image);
+    }
+   ?>
 </main>
 
 <footer>

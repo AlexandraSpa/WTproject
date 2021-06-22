@@ -3,6 +3,7 @@
 
 namespace core;
 
+use core\Application;
 use PDO;
 use PDOException;
 
@@ -37,8 +38,9 @@ class Database
                 continue;
             }
 
-            require_once Application::$ROOT_DIR.'/migrations/'.$migration;
-            $className=pathinfo($migration,PATHINFO_FILENAME);
+            require_once (Application::$ROOT_DIR . '/migrations/' . $migration);
+            $className=pathinfo('/migrations/' . $migration,PATHINFO_FILENAME);
+            echo $className .' ';
             $instance= new $className();
             $this->log("Applying migration $migration");
             $instance->up();
@@ -76,7 +78,7 @@ class Database
         $statement->execute();
     }
 
-    public function prepare($sql)
+    public function prepare($sql): \PDOStatement
     {
         return $this->pdo->prepare($sql);
     }

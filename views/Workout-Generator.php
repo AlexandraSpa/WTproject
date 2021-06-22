@@ -5,7 +5,6 @@ use models\WorkoutForm;
 /**
  * @var $this \core\View
  */
-
 $this->title='Workout Generator | Fitter'?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,23 +19,23 @@ $this->title='Workout Generator | Fitter'?>
 <main class="main">
     <section class="form-generator">
         <span class="form-question"><br>In order to see recommended workouts, please let us know:</span>
-        <?php  $form = \core\form\Form::begin("form-background","post")?>
+        <?php  $form = \core\form\Section::begin("form-background","post")?>
         <?php echo $form->fieldset($model,"activity","What is your activity level? ","radio",
-        ["sedentary","somewhat active","active","very active"])?>
+        ["Very Sedentary","Sedentary","Somewhat Active","Active","Very Active"])?>
 
         <?php echo $form->fieldset($model,"type","What type of workouts do you prefer? ","checkbox",
-            ["arm Workout","leg Workout","abdominal Workout","chest Workout","cardio Workout","back Workout","shoulders Workout"])?>
+            ["Arm Workout","Leg Workout","Abdominal Workout","Chest Workout","Cardio Workout","Back Workout","Core Workout"])?>
 
         <?php echo $form->fieldset($model,"duration","How long do you want your workouts to be? ","radio",
             ["Approximately 10 minutes","Approximately 20 minutes","Approximately 30 minutes","Approximately 60 minutes"])?>
 
         <?php echo $form->fieldset($model,"goal","What is your workout goal? ","radio",
-            ["Loose weight","Get toned","Gain muscle"])?>
+            ["Loose Weight","Get Toned","Gain Muscle"])?>
 
             <section class="submit-button">
-                <button type="submit" class="button" ">Generate personalised workout</button>
+                <button type="submit" class="button"  ">Generate personalised workout</button>
             </section>
-        <?php \core\form\Form::end()?>
+        <?php \core\form\Section::end()?>
     </section>
     <button type="button" class="dark-mode-btn" id="dark-mode-btn" onclick="switchTheme()">Switch to<br> dark mode</button>
 </main>
@@ -69,7 +68,6 @@ $this->title='Workout Generator | Fitter'?>
         <span class="copyright_text">© 2021 Ondina Lipsa, Radu Deleanu, Alexandra Spanache</span>
     </div>
 </footer>
-<section id="loader" class="loader" onload="loading() "></section>
 
 <script>
     function switchTheme() {
@@ -114,12 +112,13 @@ $this->title='Workout Generator | Fitter'?>
     }
     function loading() {
         document.getElementById("loader").style.display="block";
+        var timerStart = Date.now();
         setTimeout(showWorkout, 1000);
     }
     function showWorkout() {
-        let loader=document.querySelector(".loader");
-        loader.parentNode.removeChild(loader);
-        window.location='/available-workouts';
+        document.getElementById("loader").style.display="none";
+
+        //window.location='/available-workouts';
     }
 
 

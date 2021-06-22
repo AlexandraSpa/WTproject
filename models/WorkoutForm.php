@@ -5,6 +5,7 @@ namespace models;
 
 
 use core\Model;
+use core\WorkoutModel;
 
 class WorkoutForm extends Model
 {
@@ -22,5 +23,7 @@ class WorkoutForm extends Model
             'goal'=>[self::RULE_REQUIRED]
         ];
     }
+
+
 
 }
